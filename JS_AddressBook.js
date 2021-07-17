@@ -23,15 +23,6 @@ constructor(...params) {
             return 'Invalid First Name';
         }
     }
-
-
-  //defining to string method
-  toString() {
-    return "first Name: " + this.firstName + ", last Name: " + this.lastName
-      + "\nAddress: " + this.address + ", City: " + this.city
-      + ", State: " + this.state + " Zip: " + this.zip
-      + ", \nPhoneNumber: " + this.phoneNumber + ", email: " + this.email;
-  }
   //get and set for lastname
   //first letter should be capital and min 3 letters
   get lastName() { 
@@ -117,4 +108,28 @@ constructor(...params) {
     else
       throw "Invalid email";
   }
+  //defining to string method
+  toString() {
+    return "first Name: " + this.firstName + ", last Name: " + this.lastName
+      + "\nAddress: " + this.address + ", City: " + this.city
+      + ", State: " + this.state + " Zip: " + this.zip
+      + ", \nPhoneNumber: " + this.phoneNumber + ", email: " + this.email;
+  }
 }
+let contactDetailsArray = new Array();
+    try {
+            contactDetailsArray.push(new AddressBookJs("Jyosmita", "Das", "Jutinagar", "Namrup", "Assam", "421004","91 7558368932", "jyosmita@gmail.com"));
+            contactDetailsArray.push(new AddressBookJs("Arun", "Athiringal", "Kochi", "Thrissur", "Kerala","128 755", "91 8587087642", "arun@gmail.com"));  
+            contactDetailsArray.push(new AddressBookJs("Daisy", "Bora", "Parkstreet", "Kolkata", "WestBengal","871 258", "87 6587321451", "daisy@gmail.com"));
+            contactDetailsArray.push(new AddressBookJs("Niha", "Saikia", "Marathahalli", "Bangalore", "Karnataka","128 213", "91 8966541252", "troy@gmail.com"));    
+        }
+    catch(e)
+    {
+      console.error(e);
+    }
+    Display();
+
+    function Display()
+    {
+      contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+    }
